@@ -2,8 +2,8 @@ name: Sync Amazon Orders
 
 on:
   schedule:
-    - cron: '*/30 * * * *'  # Every 30 minutes
-  workflow_dispatch:  # Manual run button
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
 
 jobs:
   sync:
@@ -13,12 +13,11 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-- run: pip install uv && uv pip install --system requests paramiko openpyxl
+      - run: pip install uv && uv pip install --system requests paramiko openpyxl
       - run: python3 sync_orders.py
         env:
           AMAZON_CLIENT_ID: ${{ secrets.AMAZON_CLIENT_ID }}
           AMAZON_CLIENT_SECRET: ${{ secrets.AMAZON_CLIENT_SECRET }}
           AMAZON_REFRESH_TOKEN: ${{ secrets.AMAZON_REFRESH_TOKEN }}
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
-          SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
           SUPABASE_KEY: ${{ secrets.SUPABASE_KEY }}
