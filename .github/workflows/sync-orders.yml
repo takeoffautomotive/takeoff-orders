@@ -13,7 +13,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: pip install uv && uv pip install requests paramiko openpyxl
+- run: pip install uv && uv pip install --system requests paramiko openpyxl
       - run: python3 sync_orders.py
         env:
           AMAZON_CLIENT_ID: ${{ secrets.AMAZON_CLIENT_ID }}
