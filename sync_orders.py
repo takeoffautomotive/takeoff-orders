@@ -12,7 +12,7 @@ import requests
 from datetime import datetime, timedelta, timezone
 
 # ── Credentials from environment variables ──────────────────────────────────
-AMAZON_CLIENT_ID     = os.environ.get("AMAZON_CLIENT_ID",     "amzn1.application-oa2-client.1cb8a62497034f7abf0472f488fc12d5")
+AMAZON_CLIENT_ID     = os.environ.get("AMAZON_CLIENT_ID",     "")
 AMAZON_CLIENT_SECRET = os.environ.get("AMAZON_CLIENT_SECRET", "")
 AMAZON_REFRESH_TOKEN = os.environ.get("AMAZON_REFRESH_TOKEN", "")
 SUPABASE_URL         = os.environ.get("SUPABASE_URL",         "https://rjuiqahxymkkazticljn.supabase.co")
